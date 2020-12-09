@@ -1,0 +1,75 @@
+.select {
+  display: flex;
+  flex-direction: column;
+  width: 350px
+}
+.select__wrapper {
+  display: flex;
+  border: 2px solid purple;
+}
+.select__list {
+  display: none;
+  flex-direction: column;
+  border-top: 0;
+  border-radius: 4px;
+  background-color: white;
+  max-width: 350px;
+  box-shadow: 0px 6px 17px 0px rgba(0,0,0,0.2);
+}
+.select__list--show {
+  display: flex;
+  animation: fadein 1s;
+}
+.select__input {
+  padding: 10px 8px;
+  border: 0;
+  border-radius: 4px;
+  outline: none;
+  width: 85%
+}
+.select__input:focus {
+  border-color: rgb(202, 33, 202)
+}
+.select__option {
+  padding: 5px 20px;
+  cursor: pointer;
+}
+.select__option:hover {
+  background-color: rgba(0,0,0,0.2);
+}
+.select__left,
+.select__right {
+  border: 1px solid  purple;
+  height: 15px;
+}
+.select__right {
+  transform: rotateZ(-45deg);
+  margin-left: 5px;
+  transition: transform 0.5s;
+}
+.select__left {
+  transform: rotateZ(45deg);
+  margin-right: 5px;
+  transition: transform 0.5s;
+}
+.select__arrows {
+  display: flex;
+  align-items: center;
+  width: 15%;
+  justify-content: center;
+}
+.select__left--active {
+  transform: rotateZ(135deg);
+}
+.select__right--active {
+  transform: rotateZ(-135deg);
+}
+
+@keyframes fadein {
+  from { opacity: 0 }
+  to   { opacity: 1 }
+}
+@keyframes fadeout {
+  from { opacity: 1 }
+  to   { opacity: 0 }
+}
